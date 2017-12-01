@@ -6,10 +6,14 @@ spring:
      initial-size: 2
 cloud:
    config:
-     uri: http://localhost:8888         
+     uri: http://18.217.130.9:8888     
 server:
     port: 8765
-   
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://18.217.130.9:8761/eureka/
 zuul:
  routes:
    authServer:
