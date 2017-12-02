@@ -6,17 +6,17 @@ spring:
      initial-size: 2
 cloud:
    config:
-     uri: http://localhost:8888
+     uri: ${DOCKER_HOST_IP}:8888
 security:
  oauth2:
    resource:
-     accessTokenUri: http://localhost:8090/oauth/check_token
-     userAuthorizationUri: http://localhost:8090/oauth/authorize
-     userInfoUri: http://localhost:8090/user
+     accessTokenUri: ${DOCKER_HOST_IP}:8090/oauth/check_token
+     userAuthorizationUri: ${DOCKER_HOST_IP}:8090/oauth/authorize
+     userInfoUri: ${DOCKER_HOST_IP}:8090/user
      jwt:
-       keyUri: http://localhost:8090/oauth/token_key
+       keyUri: ${DOCKER_HOST_IP}:8090/oauth/token_key
 server:
- port: 0
+ port: 8005
       
 eureka:
   client:
