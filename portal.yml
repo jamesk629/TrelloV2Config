@@ -4,9 +4,9 @@ spring:
   datasource:
    tomcat:
      initial-size: 2   
-cloud:
-   config:
-     uri: http://localhost:8888
+#cloud:
+#   config:
+#     uri: http://localhost:8888
 security:
  oauth2:
    resource:
@@ -15,12 +15,15 @@ security:
      userInfoUri: http://localhost:8090/user
      jwt:
        keyUri: http://localhost:8090/oauth/token_key
-server:
- port: 0
       
+server:
+  port: 8001
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://18.217.130.9:8761/eureka/  
+      defaultZone: ${DOCKER_HOST_IP}:8761/eureka/
+  instance:
+    instanceId: ${spring.application.name}
+    hostname: ${DOCKER_HOST_IP}:${server.port}
