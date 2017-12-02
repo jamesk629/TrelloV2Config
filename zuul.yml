@@ -9,10 +9,7 @@ hystrix:
    default:
      execution:
        timeout:
-         enabled: false
-cloud:
-   config:
-     uri: http://18.217.130.9:8888     
+         enabled: false  
 server:
     port: 8765
 
