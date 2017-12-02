@@ -10,7 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: http://localhost:8888/
+          uri: ${DOCKER_HOST_IP}:8888/
   datasource:
    tomcat:
      initial-size: 2  
