@@ -6,11 +6,7 @@ keystore:
 spring:
   application:
     name: auth-service
-  cloud:
-    config:
-      server:
-        git:
-          uri: ${DOCKER_HOST_IP}:8888/
+
   datasource:
    tomcat:
      initial-size: 2  
