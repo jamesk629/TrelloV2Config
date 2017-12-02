@@ -4,9 +4,6 @@ spring:
   datasource:
    tomcat:
      initial-size: 2   
-cloud:
-   config:
-     uri: ${DOCKER_HOST_IP}:8888
 security:
  oauth2:
    resource:
